@@ -9,6 +9,7 @@ int main()
     uint8_t h[n];
     uint8_t identical = n/5;
 
+    //Сортировка массива при вводе
     uint8_t min = 0;
     uint8_t max = 0;
     for (uint8_t i = 0; i < n; ++i) {
