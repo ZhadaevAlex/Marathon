@@ -19,19 +19,15 @@ int main()
     int *ratingSort = new int[n]; //Рейтинги, отсортированные по воззрастанию
     int *star = new int[n]; //Звезды
 
-    //Ввод
-    for (int i = 0 ; i < n; ++i) {
-        cin >> rating[i];
-    }
-
-    //
-    for (int i = 0; i < n; i++) {
-        ratingSort[i] = rating[i];
-    }
-
-    //Формирование упорядоченного по возрастанию массива со звездами
     int k = 0;
-    for (int i = 0; i < n; ++i) {
+    for (int i = 0 ; i < n; ++i) {
+        //Ввод
+        cin >> rating[i];
+
+        //Формирование массива с отсортированным рейтингом
+        ratingSort[i] = rating[i];
+
+        //Формирование упорядоченного по возрастанию массива со звездами
         for (int j = 0; j < n / 5; j++) {
             star[k] = i + 1;
             k++;
