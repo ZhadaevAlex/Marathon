@@ -20,12 +20,21 @@ int main()
     int *star = new int[n]; //Звезды
 
     int k = 0;
+    int min = 0;
+    int max = 0;
     for (int i = 0 ; i < n; ++i) {
         //Ввод
-        cin >> rating[i];
+        cin >> rating[i];        
 
         //Формирование массива с отсортированным рейтингом
         ratingSort[i] = rating[i];
+        if (ratingSort[i] < ratingSort[min]) {
+            min = i;
+        }
+
+        if (ratingSort[i] > ratingSort[max]) {
+            max = i;
+        }
 
         //Формирование упорядоченного по возрастанию массива со звездами
         for (int j = 0; j < n / 5; j++) {
@@ -34,16 +43,16 @@ int main()
         }
     }
 
-    //Сортировка массива с рейтингами
-    //Пузырьковый метод (НЕоптимизированный)
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n - 1; j++) {
-            operations++;
-            if (ratingSort[j] > ratingSort[j + 1]) {
-                swap(&ratingSort[j], &ratingSort[j + 1]);
-            }
-        }
-    }
+//    //Сортировка массива с рейтингами
+//    //Пузырьковый метод (НЕоптимизированный)
+//    for (int i = 0; i < n; i++) {
+//        for (int j = 0; j < n - 1; j++) {
+//            operations++;
+//            if (ratingSort[j] > ratingSort[j + 1]) {
+//                swap(&ratingSort[j], &ratingSort[j + 1]);
+//            }
+//        }
+//    }
 
     for (int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
