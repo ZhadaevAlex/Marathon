@@ -28,6 +28,7 @@ int main()
 
         //Формирование массива с отсортированным рейтингом
         ratingSort[i] = rating[i];
+
         if (ratingSort[i] < ratingSort[min]) {
             min = i;
         }
@@ -42,17 +43,6 @@ int main()
             k++;
         }
     }
-
-//    //Сортировка массива с рейтингами
-//    //Пузырьковый метод (НЕоптимизированный)
-//    for (int i = 0; i < n; i++) {
-//        for (int j = 0; j < n - 1; j++) {
-//            operations++;
-//            if (ratingSort[j] > ratingSort[j + 1]) {
-//                swap(&ratingSort[j], &ratingSort[j + 1]);
-//            }
-//        }
-//    }
 
     for (int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
