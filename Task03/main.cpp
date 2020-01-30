@@ -16,20 +16,25 @@ int main()
     cin >> n;
 
     int *rating = new int[n]; //Рейтинги
-    int *ratingSort = new int[n]; //Рейтинги, отсортированные по воззрастанию
+    int *ratingSort = new int[n]; //Рейтинги, отсортированные по возрастанию
     int *star = new int[n]; //Звезды
 
     int k = 0;
     int min = 0;
     int max = 0;
+    int m = 0;
     for (int i = 0 ; i < n; ++i) {
         //Ввод
-        cin >> rating[i];        
+        cin >> rating[i];
+        m++;
 
         //Формирование массива с отсортированным рейтингом
+        for (int j = 0; j < m; ++j) {
+            if ()
+        }
         ratingSort[i] = rating[i];
 
-        if (ratingSort[i] < ratingSort[min]) {
+        if (ratingSort[i] < min) {
             min = i;
         }
 
