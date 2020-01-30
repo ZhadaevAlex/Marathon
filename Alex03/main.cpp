@@ -4,6 +4,9 @@ using namespace std;
 
 int main()
 {
+    cout << "Александр Morgan" << endl;
+
+    long beginTime = clock();
     uint8_t n = 0;
     cin >> (int&)n;
     uint8_t h[n];
@@ -52,6 +55,14 @@ int main()
     for (uint8_t i = 0; i < n; ++i) {
         cout << static_cast<uint16_t>(h[i]) << ' ';
     }
+
+    cout << endl;
+
+    long endTime = clock();
+
+    long resultTime = endTime - beginTime;
+
+    cout << "Количество тактов: " << resultTime << endl;
 
     return 0;
 }
