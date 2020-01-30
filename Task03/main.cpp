@@ -69,7 +69,7 @@ int main()
 
     delete[] rating;
     delete[] ratingSort;
-    delete[] star;
+    //delete[] star;
 
     long endTime = clock();
 
