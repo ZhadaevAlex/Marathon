@@ -38,8 +38,8 @@ int main()
     int *ratingSort = new int[n]; //Рейтинги, отсортированные по возрастанию
     int *star = new int[n]; //Звезды
 
-    int k = 0;
-
+    int s = 0;
+    int j = 0;
     for (int i = 0 ; i < n; ++i) {
         //Ввод
         cin >> rating[i];
@@ -48,28 +48,29 @@ int main()
         ratingSort[i] = rating[i];
 
         //Формирование упорядоченного по возрастанию массива со звездами
-        for (int j = 0; j < n / 5; ++j) {
-            star[k] = i + 1;
-            k++;
+        if (j == n / 5) {
+            s++;
+            j = 0;
         }
+
+        j++;
+
+        star[i] = s + 1;
     }
 
     //Сортировка массива
     bubbleSortOpt(ratingSort, n);
 
-    for (int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            if (rating[i] == ratingSort[j]) {
+    for (int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            if (rating[i] == ratingSort[j])
                 cout << star[j] << " ";
-            }
-        }
-    }
 
     cout << endl;
 
     delete[] rating;
     delete[] ratingSort;
-    //delete[] star;
+    delete[] star;
 
     long endTime = clock();
 
